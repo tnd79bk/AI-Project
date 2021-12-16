@@ -302,10 +302,10 @@ function updateAdvantage() {
     $('#advantageColor').text('Neither side');
     $('#advantageNumber').text(globalSum);
   }
-  $('#advantageBar').attr({
-    'aria-valuenow': `${-globalSum}`,
-    style: `width: ${((-globalSum + 2000) / 4000) * 100}%`,
-  });
+  // $('#advantageBar').attr({
+  //   'aria-valuenow': `${-globalSum}`,
+  //   style: `width: ${((-globalSum + 2000) / 4000) * 100}%`,
+  // });
 }
 
 /*
