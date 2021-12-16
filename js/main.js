@@ -25,7 +25,7 @@ board = Chessboard('myBoard', config);
 
 timer = null;
 
-var weights = { p: 100, n: 280, b: 320, r: 479, q: 929, k: 60000, k_e: 60000 };
+var weights = { p: 100, n: 280, b: 320, r: 479, q: 929, k: 60000 };
 var pst_w = {
   p: [
     [100, 100, 100, 100, 105, 100, 100, 100],
@@ -87,18 +87,6 @@ var pst_w = {
     [-4, 3, -14, -50, -57, -18, 13, 4],
     [17, 30, -3, -14, 6, -1, 40, 18],
   ],
-
-  // Endgame King Table
-  k_e: [
-    [-50, -40, -30, -20, -20, -30, -40, -50],
-    [-30, -20, -10, 0, 0, -10, -20, -30],
-    [-30, -10, 20, 30, 30, 20, -10, -30],
-    [-30, -10, 30, 40, 40, 30, -10, -30],
-    [-30, -10, 30, 40, 40, 30, -10, -30],
-    [-30, -10, 20, 30, 30, 20, -10, -30],
-    [-30, -30, 0, 0, 0, 0, -30, -30],
-    [-50, -30, -30, -30, -30, -30, -30, -50],
-  ],
 };
 var pst_b = {
   p: pst_w['p'].slice().reverse(),
@@ -107,7 +95,6 @@ var pst_b = {
   r: pst_w['r'].slice().reverse(),
   q: pst_w['q'].slice().reverse(),
   k: pst_w['k'].slice().reverse(),
-  k_e: pst_w['k_e'].slice().reverse(),
 };
 
 var pstOpponent = { w: pst_b, b: pst_w };
@@ -131,8 +118,7 @@ function evaluateBoard(game, move, prevSum, color) {
     }
   }
 
-  if (game.in_draw() || game.in_threefold_repetition() || game.in_stalemate())
-  {
+  if (game.in_draw() || game.in_threefold_repetition() || game.in_stalemate()) {
     return 0;
   }
 
@@ -155,17 +141,6 @@ function evaluateBoard(game, move, prevSum, color) {
     8 - parseInt(move.to[1]),
     move.to.charCodeAt(0) - 'a'.charCodeAt(0),
   ];
-
-  // Change endgame behavior for kings
-  if (prevSum < -1500) {
-    if (move.piece === 'k') {
-      move.piece = 'k_e';
-    }
-    // Kings can never be captured
-    // else if (move.captured === 'k') {
-    //   move.captured = 'k_e';
-    // }
-  }
 
   if ('captured' in move) {
     // Opponent piece was captured (good for us)
