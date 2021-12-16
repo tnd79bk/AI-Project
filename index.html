@@ -47,7 +47,7 @@
 <body>
     <main>
         <div class="container my-3">
-            <div class="row align-items-center">
+            <div class="row">
                 <div class="col-md-5">
                     <h1 class="text-align-center">AI Chess Program</h1>
                     <div class="row justify-content-center">
@@ -56,6 +56,11 @@
                     <div class="row mb-3 justify-content-center">
                         That's &nbsp <span id="positions-per-s">0</span> &nbsp positions / s.
                     </div>
+                    <div class="row mb-3 justify-content-center">
+                        <button class="btn btn-primary" onclick="displaySetting()">Setting
+                        </button>
+                    </div>
+
                     <div id="accordion">
                         <div id="settings" aria-labelledby="settingsHeading" data-parent="#accordion">
                             <div class="card-body">
@@ -87,7 +92,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card">
+                        <!-- <div class="card">
                             <div class="card-header" id="compVsCompHeading">
                                 <h2 class="text-align-center">
                                     <button class="btn btn-header no-outline" data-target="#compVsComp"
@@ -96,17 +101,15 @@
                                     </button>
                                 </h2>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div id="compVsComp" aria-labelledby="compVsCompHeading" data-parent="#accordion">
-                        <div class="card-body">
-                            <div class="row text-align-center">
-                                <div class="col-md-6 my-2">
-                                    <button class="btn btn-success" id="compVsCompBtn">Start Game</button>
-                                </div>
-                                <div class="col-md-6 my-2">
-                                    <button class="btn btn-danger" id="resetBtn">Stop and Reset</button>
-                                </div>
+                        <div class="row mb-3 text-align-center">
+                            <!-- <div class=" col-md-6 my-2">
+                            <button class="btn btn-success" id="compVsCompBtn">Start Game</button>
+                        </div> -->
+                            <div>
+                                <button class="btn btn-danger" id="resetBtn"> Reset</button>
                             </div>
                         </div>
                     </div>
@@ -129,10 +132,7 @@
                             <p><span id="status">No check, checkmate, or draw.</span></p>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-7">
-                    <div id="myBoard"></div>
-                    <div class="row my-3 text-align-center">
+                    <div class="row text-align-center">
                         <div class="col-md-6 my-2">
                             <button class="btn btn-danger" id="undoBtn">Undo</button>
                         </div>
@@ -141,9 +141,24 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-md-7">
+                    <div id="myBoard"></div>
+                </div>
             </div>
         </div>
     </main>
 </body>
 
 </html>
+<script>
+    function displaySetting() {
+        element = document.querySelector('#accordion');
+        if (element.style.display == 'none') {
+            element.style.display = 'block';
+        }
+        else {
+            element.style.display = 'none';
+        }
+
+    }
+</script>
