@@ -505,10 +505,6 @@ function showHint() {
   }
 }
 
-/*
- * The remaining code is adapted from chessboard.js examples #5000 through #5005:
- * https://chessboardjs.com/examples#5000
- */
 function removeGreySquares() {
   $('#myBoard .square-55d63').css('background', '');
 }
