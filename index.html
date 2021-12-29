@@ -12,6 +12,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/chessboard-1.0.0.css">
 
     <!-- Google Icons (Material Design) -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" crossorigin="anonymous">
@@ -24,16 +25,10 @@
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous">
         </script>
 
-    <!-- Chessboard JS -->
-    <link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css"
-        integrity="sha384-q94+BZtLrkL1/ohfjR8c6L+A6qzNH9R2hBLwyoAfu3i/WCvQjzL2RQJ3uNHDISdU" crossorigin="anonymous">
-    <script defer src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"
-        integrity="sha384-8Vi8VHwn3vjQ9eUHUxex3JSN/NFqUg3QbPyX8kWyb93+8AC/pPWTzj+nHtbC5bxD"
-        crossorigin="anonymous"></script>
-
-    <!-- Chess JS -->
+    <!-- JS  -->
+    <script defer src="js/chessboard-1.0.0.js"></script>
     <script defer src="js/chess.js"></script>
-    </script>
+
 
     <!-- Bootstrap JS -->
     <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
@@ -64,7 +59,7 @@
                             <div class="card-body">
                                 <div class="row align-items-center justify-content-center">
                                     <div class="form-group">
-                                        <label for="search-depth">Search Depth (Black):</label>
+                                        <label for="search-depth">Search Depth For Black:</label>
                                         <select id="search-depth">
                                             <option value="1">1</option>
                                             <option value="2" selected>2</option>
@@ -74,7 +69,7 @@
                                 </div>
                                 <div class="row align-items-center justify-content-center">
                                     <div class="form-group">
-                                        <label for="search-depth-white">Search Depth (White):</label>
+                                        <label for="search-depth-white">Search Depth For White:</label>
                                         <select id="search-depth-white">
                                             <option value="1">1</option>
                                             <option value="2" selected>2</option>
@@ -85,7 +80,7 @@
                                 <div class="row align-items-center justify-content-center">
                                     <div class="form-group">
                                         <input type="checkbox" id="showHint" name="showHint" value="showHint">
-                                        <label for="showHint">Show Suggested Move (White)</label>
+                                        <label for="showHint">Suggested Move (White)</label>
                                     </div>
                                 </div>
                             </div>
