@@ -246,7 +246,27 @@ function minimax(game, depth, alpha, beta, isMaximizingPlayer, sum, color) {
 
 function checkStatus(color) {
   if (game.in_checkmate()) {
-    $('#status').html(`<b>Checkmate!</b> Oops, <b>${color}</b> lost.`);
+    var modal = document.getElementById("myModal");
+    modal.style.display = "block";
+
+    var btn = document.getElementById("resetBtn2");
+    btn.onclick = function () {
+      modal.style.display = "none";
+      reset()
+    }
+
+    var span = document.getElementsByClassName("close")[0];
+    span.onclick = function () {
+      modal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+
+    $('#status').html(`<b>Checkmate!</b>.`);
   } else if (game.insufficient_material()) {
     $('#status').html(`It's a <b>draw!</b> (Insufficient Material)`);
   } else if (game.in_threefold_repetition()) {
@@ -366,6 +386,7 @@ function compVsComp(color) {
 function reset() {
   game.reset();
   globalSum = 0;
+  $('#status').html(`No check, checkmate, or draw.`);
   $board.find('.' + squareClass).removeClass('highlight-white');
   $board.find('.' + squareClass).removeClass('highlight-black');
   $board.find('.' + squareClass).removeClass('highlight-hint');
