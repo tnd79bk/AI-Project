@@ -1,27 +1,16 @@
 # AI-Project
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development. See Deployment for notes on how to deploy the project on a live system.
-Download the repository
-```
-git clone https://github.com/tnd79bk/AI-Project.git
-cd AI-Project
-```
-### Prerequisites
-
-You will need to have Node.js and npm installed. For instructions on installing Node, please visit [NPM's documentation on installing Node.js](https://docs.npmjs.com/getting-started/installing-node).
-
-### Installing
-
-You can run npm's initialization to install dependencies from `package.json`.
-
-```
-npm init
-```
+These instructions will get you a copy of the project up and running on your local machine for development. 
 
 ### How to Play
+1. Download the repository
+```
+git clone https://github.com/tnd79bk/AI-Project.git
+```
+2. You can play by openning file index.html in your browser and play
 
-You can open file index.html in your browser and play
+3. Play as white by dragging a piece to your desired location. The AI plays as black. The AI's minimax search depth (which is directly related to how well it will play) can be customised using the 'Search Depth For Black)' dropdown. Using a higher value will improve the AI's accuracy, but it will take longer to decide on the next move.
 
 #### Play Against Computer
 
