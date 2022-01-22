@@ -3,6 +3,9 @@
 
 These instructions will get you a copy of the project up and running on your local machine for development. 
 
+The primary concern of chess-ai is the decision-making part of the application. All functionality outside the scope of the AI are implemented using external libraries:
+- Chessboard GUI: Using the chessboard.js API
+- Game Mechanics: Using the chess.js API
 ### How to Play
 1. Download the repository
 ```
@@ -22,15 +25,9 @@ The computer is currently set to look 1,2 or 3 (which you select in depth) moves
 
 If you'd like to have the computer play the computer, you can press CompVsComp button in your browser, setting the algorithm you'd like to use, and each computer player's 'skill' level.
 
-## Built With
-
-* [Express](https://expressjs.com) - The web framework used
-* [chess.js](https://github.com/jhlywa/chess.js) - Chess library
-* [chessboard.js](https://github.com/oakmac/chessboardjs) - Chess board visualization
-
 ## Authors
 
-* **Tran Ngoc Duc** - *Initial work* - [tnd79bk](https://github.com/tnd79bk)
+* **Tran Ngoc Duc,Do Xuan Dung,Nguyen Tien Tuan,Nguyen Doan Hoang Thu** - *Initial work* - [tnd79bk](https://github.com/tnd79bk)
 
 ## Acknowledgments
 
